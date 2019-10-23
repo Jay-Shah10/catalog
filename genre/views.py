@@ -9,7 +9,11 @@ def index(request):
     return render(request, 'genre/index.html', context={'genres':genres, 'movies':movies} )
 
 
-def show_movies(request, pk):
-    genre = Genre.objects.get(pk=pk)
+def show_movies(request, genre_pk):
+    genre = Genre.objects.get(pk=genre_pk)
     movies = Movie.objects.filter(genre=genre)
     return render(request, 'genre/movies.html', context={'movies':movies})
+
+def show_movie(request, movie_pk):
+    movie = Movie.objects.get(pk=movie_pk)
+    return render(request, 'genre/movie.html', context={'movie':movie})

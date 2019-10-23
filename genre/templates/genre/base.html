@@ -52,7 +52,7 @@
                   <div class="dropdown-menu">
 
                     {% for genre in genres  %}
-                      <a class="dropdown-item" href="{% url 'movies' pk=genre.id %}">{{genre.genre}}</a>
+                      <a class="dropdown-item" href="{% url 'movies' genre_pk=genre.id %}">{{genre.genre}}</a>
                     {% endfor %}
 
                       <div class="dropdown-divider"></div>
