@@ -30,6 +30,7 @@ python manage.py runserver
 ```
 This will boot the django server. ```localhost:8000```. You should see Catalog UI. 
 
+This is still under-development.
 
 
 
