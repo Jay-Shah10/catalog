@@ -1,0 +1,34 @@
+{% extends "genre/base.html" %}
+  
+{% block content %}
+{% include "genre/headers.html" %}
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+        {% for movie in movies  %}
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+
+              <svg class="bd-placeholder-img card-img-top"  width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"  aria-label="Placeholder: Thumbnail">  
+              <image xlink:href="{{movie.image.url}}" height="100%" width="100%"/>
+              </svg>
+
+              <div class="card-body"> 
+                <p class="card-text d-flex justify-content-between align-items-center">{{movie.title}}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{% url 'movie' movie_pk=movie.id%}">View</a></button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><a href="#">Edit</a></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        {% endfor %}
+
+{% endblock  %}
+
+
